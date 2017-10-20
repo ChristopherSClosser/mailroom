@@ -17,7 +17,7 @@ import sys
 #     print(doners.keys())
 
 
-def prompt():
+def mailroom_prompt():
     """Active prompt for send_thanks or report."""
     choice = input('Type "TY" for thank-you emails,\
     "RE" for a report, or "Q" to quit.').upper()
@@ -31,6 +31,6 @@ def prompt():
         print(choice)
         sys.exit()
     else:
-        print('You must type "TY" for thank-you emails,\
+        return('You must type "TY" for thank-you emails,\
         "RE" for a report, or "Q" to quit!')
-        prompt()
+        mailroom_prompt()
