@@ -59,4 +59,6 @@ def mailroom_prompt():
         mailroom_prompt()
 
 
-mailroom_prompt()
+if __name__ == "__main__":
+    """."""
+    mailroom_prompt()
