@@ -1,20 +1,31 @@
 """."""
 
 import sys
-# doners = {'name': ['$', '$']}
-#
-#
-# def send_thanks(full_name):
-#     full_name = input('Enter full name')
-#     new_donation = int(input())
-#     doners[full_name] = new_donation
-#     email_doner = 'thank you'
-#     print email_doner
-#     send_thanks()
-#
-#
-# def report():
-#     print(doners.keys())
+# import easygui
+doners = {'name': ['$', '$']}
+
+
+def send_thanks():
+    """."""
+    full_name = input('Enter full name')
+    if full_name in doners:
+        new_donation = donation_amount()
+        doners[full_name].append(new_donation)
+        email_doner = 'thank you'
+    else:
+        doners[full_name] = []
+        new_donation = donation_amount()
+        doners[full_name].append(new_donation)
+        email_doner = 'thank you'
+    print(email_doner)
+
+
+def donation_amount():
+    donation = input('Enter donation amount.')
+    if not int(donation):
+        print('You must enter a integer')
+        donation_amount()
+    return donation
 
 
 def mailroom_prompt():
@@ -23,7 +34,7 @@ def mailroom_prompt():
     "RE" for a report, or "Q" to quit.').upper()
     if choice == 'TY':
         print(choice)
-        # send_thanks()
+        send_thanks()
     elif choice == 'RE':
         print(choice)
         # report()
