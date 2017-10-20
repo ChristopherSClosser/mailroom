@@ -28,3 +28,26 @@ thank-you emails,"RE" for a report, or "Q" to quit!')
         """Test for invalid input."""
         self.assertEqual(mailroom.mailroom_prompt(), 'You must type "TY" for\
 thank-you emails,"RE" for a report, or "Q" to quit!')
+
+    @patch('mailroom.donation_amount', return_value=int)
+    def test_donation_amount_valid(self, input):
+        """."""
+        self.assertEqual(mailroom.donation_amount(), int)
+
+    @patch('mailroom.donation_amount', return_value='')
+    def test_donation_amount_invalid(self, input):
+        """."""
+        self.assertFalse(mailroom.donation_amount(), ValueError)
+
+    @patch('mailroom.send_thanks', return_value="Doe Doe")
+    def test_send_thanks(self, input):
+        """."""
+        self.assertEqual(mailroom.send_thanks(), "Doe Doe")
+
+
+def test_email_doner():
+    """."""
+    name = "Bob Bob"
+    donation = "99"
+    assert mailroom.email_donor(name, donation) == 'Thank you Bob Bob for your donation of 99 goofy goober\
+ dollars.'
