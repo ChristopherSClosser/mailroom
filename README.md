@@ -1,3 +1,6 @@
 # mailroom
 need mock
-easygui
+
+# pip install -e
+# pip install .
+# setup.py

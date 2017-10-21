@@ -2,10 +2,6 @@
 
 import sys
 
-if sys.version_info[0] == 2:
-    input = raw_input
-
-
 doners = {'name 1': [1, 2], 'name 2': [1, 2, 4], 'name 3': [4, 1, 2], }
 
 
