@@ -49,4 +49,9 @@ def test_email_doner():
     """."""
     name = "Bob Bob"
     donation = "99"
-    assert mailroom.email_donor(name, donation) == 'Thank you Bob Bob for your donation of 99 goofy goober dollars.'
+    assert mailroom.email_doner(name, donation) == 'Thank you Bob Bob for your donation of 99 goofy goober dollars.'
+
+
+def test_report():
+    """."""
+    assert mailroom.report() == "Doner: name 1 Donations: [1, 2]\nTotal Donations: 3"

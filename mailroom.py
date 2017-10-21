@@ -1,8 +1,8 @@
 """."""
 
 import sys
-# import easygui
-doners = {'name': ['$', '$']}
+
+doners = {'name 1': [1, 2], 'name 2': [1, 2, 4], 'name 3': [4, 1, 2], }
 
 
 def send_thanks():
@@ -27,8 +27,21 @@ def email_doner(name, donation):
     """Print the email."""
     email = 'Thank you %s for your donation of %s goofy goober\
  dollars.' % (name, donation)
-    mailroom_prompt()
+    if __name__ == "__main__":
+        """."""
+        print(email)
+        mailroom_prompt()
+
     return email
+
+
+def report():
+    for i in doners:
+        rep = ''
+        total = sum(doners[i])
+        rep += 'Doner: %s Donations: %s\nTotal Donations: %i' % (i, doners[i], total)
+    print(rep)
+    return rep
 
 
 def donation_amount():
@@ -49,7 +62,7 @@ def mailroom_prompt():
         send_thanks()
     elif choice == 'RE':
         print(choice)
-        # report()
+        report()
     elif choice == 'Q':
         print(choice)
         sys.exit()
