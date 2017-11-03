@@ -54,4 +54,4 @@ def test_email_doner():
 
 def test_report():
     """Test that report data return as expected."""
-    assert mailroom.report() == "Doner: name 1 Donations: [1, 2]\nTotal Donations: 3"
+    assert "Doner: name 1 Donations: [1, 2]\nTotal Donations: 3" in mailroom.report() 

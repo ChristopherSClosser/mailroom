@@ -2,6 +2,9 @@
 
 import sys
 
+if sys.version_info[0] == 2:
+    input = raw_input
+
 doners = {'name 1': [1, 2], 'name 2': [1, 2, 4], 'name 3': [4, 1, 2], }
 
 
@@ -11,6 +14,13 @@ def send_thanks():
     if full_name == '':
         print('Try again')
         send_thanks()
+
+    '''
+    doners.setdefault(full_name, [])
+    new_donation = donation_amount()
+    doners[full_name].append(new_donation)
+    return email_doner(full_name, new_donation)
+    '''
     if full_name in doners:
         new_donation = donation_amount()
         doners[full_name].append(new_donation)
@@ -37,10 +47,10 @@ def email_doner(name, donation):
 
 def report():
     """Create report of donors and their donations and total."""
+    rep = ''
     for i in doners:
-        rep = ''
         total = sum(doners[i])
-        rep += 'Doner: %s Donations: %s\nTotal Donations: %i' % (i, doners[i], total)
+        rep += 'Doner: %s Donations: %s\nTotal Donations: %i\n' % (i, doners[i], total)
     print(rep)
     return rep
 
@@ -48,10 +58,11 @@ def report():
 def donation_amount():
     """Add donation to donor."""
     donation = input('Enter donation amount: ')
-    if not int(donation):
+    try:
+        return float(donation)
+    except ValueError:
         print('You must enter a integer')
         donation_amount()
-    return donation
 
 
 def mailroom_prompt():
