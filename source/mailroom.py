@@ -50,8 +50,11 @@ def report():
     rep = ''
     for i in doners:
         total = sum(doners[i])
-        rep += 'Doner: %s Donations: %s\nTotal Donations: %i\n' % (i, doners[i], total)
+        rep += ('          Doner: {0}\n\
+      Donations: {1}\n\
+Total Donations: {2}\n\n'.format(i, doners[i], total))
     print(rep)
+    mailroom_prompt()
     return rep
 
 
