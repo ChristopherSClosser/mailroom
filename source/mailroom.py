@@ -5,16 +5,21 @@ import sys
 if sys.version_info[0] == 2:
     input = raw_input
 
-doners = {'name 1': [1, 2], 'name 2': [1, 2, 4], 'name 3': [4, 1, 2], }
+doners = {'name 1': [1.0, 2.0],
+          'name 2': [1.0, 2.0, 4.0],
+          'name 3': [4.0, 1.0, 2.0], }
 
 
 def send_thanks():
     """Take donor name and adds it to dict if needed."""
-    full_name = input('Enter full name: ')
+    full_name = input('Enter Full Name: ')
     if full_name == '':
         print('Try again')
         send_thanks()
-
+    elif full_name.upper() == 'LIST':
+        for name in doners:
+            print(name)
+        send_thanks()
     '''
     doners.setdefault(full_name, [])
     new_donation = donation_amount()
@@ -30,6 +35,7 @@ def send_thanks():
         new_donation = donation_amount()
         doners[full_name].append(new_donation)
         email_doner(full_name, new_donation)
+    mailroom_prompt()
     return email_doner
 
 
@@ -71,20 +77,16 @@ def donation_amount():
 def mailroom_prompt():
     """Active prompt for send_thanks or report."""
     choice = input('Type "TY" for thank-you emails,\
-"RE" for a report, or "Q" to quit.').upper()
+"RE" for a report, or "Q" to quit.\n').upper()
     if choice == 'TY':
-        print(choice)
         send_thanks()
     elif choice == 'RE':
-        print(choice)
         report()
     elif choice == 'Q':
-        print(choice)
         sys.exit()
-    else:
-        return('You must type "TY" for thank-you emails,\
-"RE" for a report, or "Q" to quit!')
-        mailroom_prompt()
+
+    return ('You must type "TY" for thank-you emails,\
+"RE" for a report, or "Q" to quit!', mailroom_prompt())
 
 
 if __name__ == "__main__":
