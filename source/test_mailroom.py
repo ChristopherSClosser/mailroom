@@ -1,5 +1,5 @@
 """Mailroom testing."""
-from mock import patch
+from unittest.mock import patch
 from unittest import TestCase
 import mailroom
 
@@ -50,8 +50,3 @@ def test_email_doner():
     name = "Bob Bob"
     donation = "99"
     assert mailroom.email_doner(name, donation) == 'Thank you Bob Bob for your donation of 99 goofy goober dollars.'
-
-
-def test_report():
-    """Test that report data return as expected."""
-    assert "Doner: name 1 Donations: [1, 2]\nTotal Donations: 3" in mailroom.report() 
