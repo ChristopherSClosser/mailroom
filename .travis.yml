@@ -5,6 +5,8 @@ python:
 before_install:
   - pip install pytest pytest-cov
   - pip install coveralls
+  - pip install fake-factory==0.3
+
 script:
   - py.test --cov
 after_success:
