@@ -15,7 +15,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'runme=mailroom:mailroom_prompt'
+            'mailroom = mailroom:mailroom_prompt'
         ]
     }
 )
