@@ -6,9 +6,6 @@
 Version: 1.0
 
 Creating thank-you emails or printing a report.
-* Feature #1
-* Feature #2
-* Feature #3
 
 ### Authors
 ---
@@ -42,13 +39,13 @@ Now now that you have cloned your repo and changed directories into the project,
 <pre>Welcome to the Mailroom
 You can choose to display a report
 or to add a new donation and generate a thank-you email.
-Type 'Q' to return to the main menu or exit the program.
+Type 'Q' to return to the main menu or exit the program.</pre>
 
 <pre>Available options:
                TY: Write Thank You
                RE: Create Report
                 Q: Exit Program
- Choose an option:
+ Choose an option:</pre>
 
 ### Test Suite
 ---
