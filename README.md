@@ -3,7 +3,7 @@
 ### Description
 [![Build Status](https://travis-ci.org/ChristopherSClosser/mailroom.svg?branch=master)](https://travis-ci.org/ChristopherSClosser/mailroom) [![Coverage Status](https://coveralls.io/repos/github/ChristopherSClosser/mailroom/badge.svg)](https://coveralls.io/github/ChristopherSClosser/mailroom)
 
-Version: *YOUR VERSION HERE*
+Version: 1.0
 
 Creating thank-you emails or printing a report.
 * Feature #1
@@ -17,6 +17,7 @@ Creating thank-you emails or printing a report.
 ### Getting Started
 ---
 ##### *Prerequisites*
+* python 2.7
 * [python (3.6+)](https://www.python.org/downloads/)
 * [pip](https://pip.pypa.io/en/stable/)
 * [git](https://git-scm.com/)
@@ -34,7 +35,21 @@ Now now that you have cloned your repo and changed directories into the project,
 
 `$ source ENV/bin/activate`
 
-`$ pip install -r requirements.txt`
+`$ pip install -e .`
+
+`$ mailroom`
+
+<pre>Welcome to the Mailroom
+You can choose to display a report
+or to add a new donation and generate a thank-you email.
+Type 'Q' to return to the main menu or exit the program.
+
+<pre>Available options:
+               TY: Write Thank You
+               RE: Create Report
+                Q: Exit Program
+ Choose an option:
+
 ### Test Suite
 ---
 ##### *Running Tests*
@@ -62,5 +77,6 @@ This project is licensed under MIT License - see the LICENSE.md file for details
 ### Acknowledgements
 ---
 * Coffee
+* Trial and error
 
 *This README was generated using [writeme.](https://github.com/chelseadole/write-me)*
